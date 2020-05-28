@@ -26,4 +26,4 @@ def merge(left, right):
             result.append(right.pop(0))
     return result
 
-merge_sort([5, 4, 2, 1, 3])
+print(merge_sort([5, 4, 2, 1, 3]))
