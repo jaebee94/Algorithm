@@ -2,9 +2,10 @@
 def merge_sort(arr):
     if len(arr) == 1:
         return arr
+
     middle = len(arr) // 2
-    left = [:middle]
-    right = [middle:]
+    left = arr[:middle]
+    right = arr[middle:]
 
     left = merge_sort(left)
     right = merge_sort(right)
@@ -24,3 +25,5 @@ def merge(left, right):
         elif len(right) > 0:
             result.append(right.pop(0))
     return result
+
+merge_sort([5, 4, 2, 1, 3])
