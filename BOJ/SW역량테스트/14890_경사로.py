@@ -6,14 +6,14 @@ def solution(n, l, board):
     cnt = 0
     for i in range(n):
         continuous = 0
-        pre_height = -1
-        cur_height = -1
+        pre_h = -1
+        cur_h = -1
         checked = False
 
         for j in range(n):
-            cur_height = board[i][j]
+            cur_h = board[i][j]
 
-            if pre_height >= 0 and pre_height != cur_height:
+            if pre_h >= 0 and pre_h != cur_h:
                 if checked:
                     if l == continuous:
                         continuous = 1
@@ -22,7 +22,7 @@ def solution(n, l, board):
                     else:
                         break
 
-                gap = pre_height - cur_height
+                gap = pre_h - cur_h
 
                 if abs(gap) != 1:
                     break
@@ -45,7 +45,7 @@ def solution(n, l, board):
                         continuous = 0
                         checked = False
 
-            pre_height = cur_height
+            pre_h = cur_h
 
         else:
             if not checked:
