@@ -7,12 +7,15 @@ dj = [-1, 0, 1]
 
 def kill(archor, tmp_board, turn):
     s = [archor]
+    visited = [[0]*M for _ in range(N)]
     while s:
         i, j = s.pop(0)
+        if i < N:
+            visited[i][j] = 1
         for k in range(3):
             ni = i + di[k]
             nj = j + dj[k]
-            if 0 <= ni < N-turn and 0 <= nj < M:
+            if 0 <= ni < N-turn and 0 <= nj < M and visited[ni][nj] != 1:
                 if abs(archor[0] - ni) + abs(archor[1] - nj) > D:
                     return
                 elif tmp_board[ni][nj] == 1:
