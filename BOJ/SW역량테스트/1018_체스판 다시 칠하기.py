@@ -1,4 +1,3 @@
-
 def paint(copy_board, i, j):
     change = 0
     for x in range(i, i+8):
