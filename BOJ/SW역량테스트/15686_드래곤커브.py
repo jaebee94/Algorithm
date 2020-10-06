@@ -10,8 +10,11 @@ for _ in range(n):
     for _ in range(g):
         temp = []
         for i in range(len(move)):
+            # 1 씩 더한 값을 4로 나눈 나머지가 90도 씩 시계방향으로 회전한 방향이 됨
             temp.append((move[-i-1] + 1) % 4)
+            print(temp)
         move.extend(temp)
+    # 이동해야하는 모든 방향에 대해 board에 찍어줌
     for i in move:
         nx = x + dx[i]
         ny = y + dy[i]
